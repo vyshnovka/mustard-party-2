@@ -10,16 +10,16 @@ public class CanvasManager : MonoBehaviour
 
     void Start()
     {
-        startButton.GetComponent<Button>().onClick.AddListener(startGame);
-        exitButton.GetComponent<Button>().onClick.AddListener(exitGame);
+        startButton.GetComponent<Button>().onClick.AddListener(StartGame);
+        exitButton.GetComponent<Button>().onClick.AddListener(ExitGame);
     }
 
-    void startGame()
+    void StartGame()
     {
 
     }
 
-    void exitGame()
+    void ExitGame()
     {
         Debug.Log("gg wp");
         Application.Quit();
