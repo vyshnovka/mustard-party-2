@@ -19,5 +19,5 @@ Hope I succeded.
 
 ## Credits
 
-This project is not anyhow affiliated with Square Enix or DONTNOD Entertainment.    
+This project is not anyhow affiliated with **Square Enix** or **DONTNOD Entertainment**.    
 However, all rights to images, soundtrack and blah-blah-blah belong to the companies mentioned above.
