@@ -1,19 +1,18 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-    public Text highscoreText;
-    public Text scoreText;
+    [SerializeField] private Text highscoreText;
+    [SerializeField] private Text scoreText;
 
     public static int highscore;
-    int score;
+    public static int score;
 
     void Awake()
     {
-        highscore = PlayerPrefs.GetInt("Highscore", 281);
+        highscore = PlayerPrefs.GetInt("Highscore", 0);
     }
 
     void Start()
