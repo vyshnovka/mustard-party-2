@@ -1,10 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
-    public float movementForce = 10f;
+    [SerializeField] private float movementForce = 10f;
+
     private Rigidbody2D characterRigidbody;
 
     void Start()
