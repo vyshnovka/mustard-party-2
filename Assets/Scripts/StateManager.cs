@@ -33,26 +33,4 @@ public class StateManager : MonoBehaviour
     {
         Application.Quit();
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        switch (collision.gameObject.tag)
-        {
-            case "Obstacle":
-                failUI.SetActive(true);
-
-                if (ScoreManager.score > ScoreManager.highscore)
-                {
-                    PlayerPrefs.SetInt("Highscore", ScoreManager.score);
-                }
-
-                Time.timeScale = 0;
-
-                break;
-            case "Booster":
-                ScoreManager.score += 10;
-
-                break;
-        }
-    }
 }
