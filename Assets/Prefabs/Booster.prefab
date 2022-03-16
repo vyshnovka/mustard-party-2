@@ -122,4 +122,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1124105983d773a49b7815f657685754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleSpeed: 4
+  objectMovementValues: {fileID: 11400000, guid: e9cad1869efb3df41ba61526912776fb, type: 2}
