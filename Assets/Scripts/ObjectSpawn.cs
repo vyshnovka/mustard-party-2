@@ -1,17 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ObjectSpawn : MonoBehaviour
 {
     [SerializeField] public GameObject enemy;
     [SerializeField] public GameObject obstacle;
+    [SerializeField] public GameObject booster;
 
     [SerializeField] public float deltaTime;
     [SerializeField] public float range;
 
     private float timer1 = 0;
     private float timer2 = 0;
+    private float timer3 = 0;
 
     private void Start()
     {
@@ -20,6 +20,8 @@ public class ObjectSpawn : MonoBehaviour
 
     void FixedUpdate()
     {
+        //temporarry solution 
+
         if (timer1 > Random.Range(1f, deltaTime))
         {
             GameObject enemyClone = Instantiate(enemy);
@@ -36,7 +38,16 @@ public class ObjectSpawn : MonoBehaviour
             timer2 = 0;
         }
 
+        if (timer3 > Random.Range(1f, deltaTime))
+        {
+            GameObject boosterClone = Instantiate(booster);
+            boosterClone.transform.position = transform.position + new Vector3(0, Random.Range(range, -range + 1), 0);
+
+            timer3 = 0;
+        }
+
         timer1 += Time.deltaTime;
         timer2 += Time.deltaTime;
+        timer3 += Time.deltaTime;
     }
 }
