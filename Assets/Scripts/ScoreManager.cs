@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
@@ -46,7 +48,10 @@ public class ScoreManager : MonoBehaviour
                     PlayerPrefs.SetInt("Highscore", score);
                 }
 
-                Time.timeScale = 0;
+                Invoke("RestartGame", 2.0f);
+
+                //make invoke ignore Time.timeScale???
+                //Time.timeScale = 0;
 
                 break;
             case "Booster":
@@ -56,5 +61,11 @@ public class ScoreManager : MonoBehaviour
 
                 break;
         }
+    }
+
+    private void RestartGame()
+    {
+        Scene scene = SceneManager.GetActiveScene(); 
+        SceneManager.LoadScene(scene.name);
     }
 }
