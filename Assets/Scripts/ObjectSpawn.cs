@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObstacleSpawn : MonoBehaviour
+public class ObjectSpawn : MonoBehaviour
 {
     [SerializeField] public GameObject enemy;
     [SerializeField] public GameObject obstacle;
