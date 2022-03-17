@@ -4,8 +4,8 @@ public class ObjectMovement : MonoBehaviour
 {
     [SerializeField] public ObjectMovementScriptableObject objectMovementValues;
 
-    void Update()
+    private void Update()
     {
-        transform.Translate(Vector3.left * objectMovementValues.speed * Time.deltaTime);
+        transform.Translate(Vector3.left * objectMovementValues.runtimeSpeed * Time.deltaTime);
     }
 }

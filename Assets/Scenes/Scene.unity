@@ -543,6 +543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d79f6bb08774d1344b6282700549e326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectMovementValues: {fileID: 11400000, guid: e9cad1869efb3df41ba61526912776fb, type: 2}
   failUI: {fileID: 1320662307}
   highscoreText: {fileID: 1644713111}
   scoreText: {fileID: 1656156638}

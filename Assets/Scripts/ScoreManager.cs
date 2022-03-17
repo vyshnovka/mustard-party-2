@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
+    [SerializeField] public ObjectMovementScriptableObject objectMovementValues;
+
     [SerializeField] private GameObject failUI;
 
     [SerializeField] private Text highscoreText;
@@ -21,6 +23,8 @@ public class ScoreManager : MonoBehaviour
 
     void Start()
     {
+        objectMovementValues.runtimeSpeed = objectMovementValues.startSpeed;
+
         highscoreText.text = highscore.ToString();
 
         StartCoroutine(AddScore());
@@ -48,10 +52,9 @@ public class ScoreManager : MonoBehaviour
                     PlayerPrefs.SetInt("Highscore", score);
                 }
 
-                Invoke("RestartGame", 2.0f);
+                objectMovementValues.runtimeSpeed = 0;
 
-                //make invoke ignore Time.timeScale???
-                //Time.timeScale = 0;
+                Invoke("RestartGame", 2.0f);
 
                 break;
             case "Booster":
@@ -65,7 +68,7 @@ public class ScoreManager : MonoBehaviour
 
     private void RestartGame()
     {
-        Scene scene = SceneManager.GetActiveScene(); 
+        Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
     }
 }
