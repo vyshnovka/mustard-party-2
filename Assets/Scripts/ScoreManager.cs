@@ -16,6 +16,8 @@ public class ScoreManager : MonoBehaviour
     public static int highscore;
     public static int score;
 
+    private Coroutine scoreRoutine = null;
+
     void Awake()
     {
         highscore = PlayerPrefs.GetInt("Highscore", 0);
@@ -27,7 +29,7 @@ public class ScoreManager : MonoBehaviour
 
         highscoreText.text = highscore.ToString();
 
-        StartCoroutine(AddScore());
+        scoreRoutine = StartCoroutine(AddScore());
     }
 
     IEnumerator AddScore()
@@ -52,6 +54,7 @@ public class ScoreManager : MonoBehaviour
                     PlayerPrefs.SetInt("Highscore", score);
                 }
 
+                StopCoroutine(scoreRoutine);
                 objectMovementValues.runtimeSpeed = 0;
 
                 Invoke("RestartGame", 2.0f);
