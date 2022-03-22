@@ -13,6 +13,8 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private Text highscoreText;
     [SerializeField] private Text scoreText;
 
+    private Animator anim;
+
     public static int highscore;
     public static int score;
 
@@ -25,6 +27,8 @@ public class ScoreManager : MonoBehaviour
 
     void Start()
     {
+        anim = GetComponent<Animator>();
+
         objectMovementValues.runtimeSpeed = objectMovementValues.startSpeed;
 
         highscoreText.text = highscore.ToString();
@@ -61,6 +65,9 @@ public class ScoreManager : MonoBehaviour
 
                 break;
             case "Booster":
+                anim.SetTrigger("Score");
+                //anim.ResetTrigger("Score");
+
                 score += 10;
                 scoreText.text = score.ToString();
                 Destroy(collision.gameObject);
