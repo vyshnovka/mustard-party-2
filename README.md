@@ -3,7 +3,7 @@
 Hawt Dawg Man: Mustard Party 2 is a mobile game originally implemented in The Awesome Adventures of Captain Spirit.    
 Chris Eriksen, the main character, can play it on his father's phone during the gameplay.
 
-As a big fan of the Life is Strange game series, I decided to create the most similar clone of Mustard Party 2 using Unity, implementing all the main mechanics.    
+As a big fan of the Life is Strange game series, I decided to clone the Mustard Party 2 game using Unity, implementing all the main mechanics.    
 Hope I succeded.
 
 ## Tools
